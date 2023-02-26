@@ -1,26 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {Routes, Route,} from 'react-router-dom'
+import {Layout} from "./components/Layout/Layout";
+import {CategoryList} from "./pages/Category/CategoryList";
+import {CatalogList} from "./pages/Catalog/CatalogList";
+import Recipe from "./pages/Pecipe/Recipe";
+import ErrorPage from "./pages/ErrorPage/ErrorPage";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export const App = () => {
+    return (
+        <>
+            <Routes>
+                <Route path={'/'} element={<Layout/>}>
+                    <Route path={'/'} element={<CatalogList/>}/>
+                    <Route path={'/category/:name'} element={<CategoryList/>}/>
+                    <Route path={'/meal/:id'} element={<Recipe/>}/>
+                    <Route path={'/*'} element={<ErrorPage/>}/>
+                </Route>
+            </Routes>
+        </>
+    );
 }
-
-export default App;
