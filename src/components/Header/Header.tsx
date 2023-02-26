@@ -15,7 +15,7 @@ export const Header = () => {
                 <Typography variant="h6" component="div" sx={{flexGrow: 1}}>
                     Meal
                 </Typography>
-                <Button color="inherit" target={"_blank"} href="https://github.com/RudakovIlya/meal-app">
+                <Button color="inherit" target={"_blank"} href="https://github.com/bekadev/meal-app">
                     Repo
                 </Button>
             </Toolbar>
